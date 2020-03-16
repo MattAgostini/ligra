@@ -2,6 +2,7 @@
     "files.associations": {
         "BFS.C": "cpp",
         "iostream": "cpp",
-        "ostream": "cpp"
+        "ostream": "cpp",
+        "BFS-Bitvector.C": "cpp"
     }
 }

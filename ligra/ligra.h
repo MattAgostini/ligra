@@ -541,11 +541,11 @@ int parallel_main(int argc, char* argv[]) {
 #endif
 
       double sum = 0;
-      //long startVertices[] = {878248, 1093773, 1040066, 1529161, 1105468, 1543502}; // Skitter BFS
+      long startVertices[] = {878248, 1093773, 1040066, 1529161, 1105468, 1543502}; // Skitter BFS
 
       //long startVertices[] = {2062367, 767779, 1805450, 1060076, 424425, 641114}; // Orkut BFS
 
-      long startVertices[] = {165486, 15147, 288568, 17220, 127341, 328483}; // Higgs BFS
+      //long startVertices[] = {165486, 15147, 288568, 17220, 127341, 328483}; // Higgs BFS
 
       //long startVertices[] = {3903641, 4158378, 1486101, 467386, 1875102, 1966836}; // LiveJournal BFS
 
