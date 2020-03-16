@@ -557,6 +557,7 @@ int parallel_main(int argc, char* argv[]) {
       G.del();
 
       double average = sum / rounds;
+      cout << "Average running time : " << average << endl;
 
 
     }
