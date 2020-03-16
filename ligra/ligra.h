@@ -541,6 +541,7 @@ int parallel_main(int argc, char* argv[]) {
 #endif
 
       cout << "Starting" << endl;
+      double sum = 0;
 
       Compute(G,P);
       if(G.transposed) G.transpose();
@@ -548,13 +549,14 @@ int parallel_main(int argc, char* argv[]) {
         //startTime();
         _tm.start();
         Compute(G,P);
-        cout << "Running time " << _tm.next() << endl;
+        //cout << "Running time " << _tm.next() << endl;
+        sum += _tm.next();
         //nextTime("Running time");
         if(G.transposed) G.transpose();
       }
       G.del();
 
-
+      double average = sum / rounds;
 
 
     }
