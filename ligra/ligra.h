@@ -479,7 +479,7 @@ int parallel_main(int argc, char* argv[]) {
   //cout << "mmap = " << mmap << endl;
   long rounds = P.getOptionLongValue("-rounds",3);
 
-  setworkers(16);
+  setWorkers(16);
 
   if (compressed) {
     if (symmetric) {
