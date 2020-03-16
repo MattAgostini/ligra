@@ -545,9 +545,11 @@ int parallel_main(int argc, char* argv[]) {
       Compute(G,P);
       if(G.transposed) G.transpose();
       for(int r=0;r<rounds;r++) {
-        startTime();
+        //startTime();
+        _tm.start();
         Compute(G,P);
-        nextTime("Running time");
+        cout << "Running time " << _tm.next() << endl;
+        //nextTime("Running time");
         if(G.transposed) G.transpose();
       }
       G.del();
