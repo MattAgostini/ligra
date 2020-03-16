@@ -38,7 +38,7 @@ struct BFS_F {
 };
 
 template <class vertex>
-void Compute(graph<vertex>& GA, commandLine P) {
+void Compute(graph<vertex>& GA, commandLine P, long start) {
   long start = P.getOptionLongValue("-r",0);
   long n = GA.n;
   //creates Parents array, initialized to all -1, except for start

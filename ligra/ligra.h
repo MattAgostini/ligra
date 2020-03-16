@@ -542,14 +542,20 @@ int parallel_main(int argc, char* argv[]) {
 
       cout << "Starting" << endl;
       double sum = 0;
+      long startVertices = {
+878248,
+1093773,
+1040066,
+1529161,
+1105468,
+1543502};
 
       Compute(G,P);
       if(G.transposed) G.transpose();
       for(int r=0;r<rounds;r++) {
         //startTime();
         _tm.start();
-        Compute(G,P);
-        //cout << "Running time " << _tm.next() << endl;
+        Compute(G,P, startVertices[r / 5]);
         sum += _tm.next();
         //nextTime("Running time");
         if(G.transposed) G.transpose();
