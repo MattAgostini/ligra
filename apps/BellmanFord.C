@@ -56,8 +56,8 @@ struct BF_Vertex_F {
 };
 
 template <class vertex>
-void Compute(graph<vertex>& GA, commandLine P) {
-  long start = P.getOptionLongValue("-r",0);
+void Compute(graph<vertex>& GA, commandLine P, long start) {
+  //long start = P.getOptionLongValue("-r",0);
   long n = GA.n;
   //initialize ShortestPathLen to "infinity"
   intE* ShortestPathLen = newA(intE,n);

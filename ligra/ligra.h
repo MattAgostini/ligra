@@ -542,16 +542,18 @@ int parallel_main(int argc, char* argv[]) {
 
       double sum = 0;
       //long startVertices[] = {878248, 1093773, 1040066, 1529161, 1105468, 1543502}; // Skitter BFS
-
       //long startVertices[] = {2062367, 767779, 1805450, 1060076, 424425, 641114}; // Orkut BFS
-
       //long startVertices[] = {165486, 15147, 288568, 17220, 127341, 328483}; // Higgs BFS
-
       //long startVertices[] = {3903641, 4158378, 1486101, 467386, 1875102, 1966836}; // LiveJournal BFS
-
       //long startVertices[] = {858951, 438160, 1385063, 793905, 310461, 300989}; // Pokec BFS
+      //long startVertices[] = {5515818, 3554183, 2622510, 200094, 1323299, 1166567}; // StackOverflow BFS
 
-      long startVertices[] = {5515818, 3554183, 2622510, 200094, 1323299, 1166567}; // StackOverflow BFS
+      long startVertices[] = {1687785, 774220, 1672775, 324212, 411760, 554802}; // Skitter SSSP
+      //long startVertices[] = {376633, 2503156, 1941442, 742190, 1461468, 2082824}; // Orkut SSSP
+      //long startVertices[] = {132279, 206656, 418509, 197172, 213192, 11003}; // Higgs SSSP
+      //long startVertices[] = {2885369, 669594, 848203, 679576, 2735354, 2016861}; // LiveJournal SSSP
+      //long startVertices[] = {247882, 246033, 1092414, 720811, 255164, 139421}; // Pokec SSSP
+      //long startVertices[] = {3214351, 2446213, 3198986, 1313602, 32228, 824045}; // StackOverflow SSSP
 
       Compute(G,P,startVertices[0]);
       if(G.transposed) G.transpose();
