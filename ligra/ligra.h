@@ -464,7 +464,7 @@ vertexSubset vertexFilter2(vertexSubsetData<data> V, F filter) {
 inline bool cond_true (intT d) { return 1; }
 
 template<class vertex>
-void Compute(graph<vertex>&, commandLine);
+void Compute(graph<vertex>&, commandLine, long start);
 
 template<class vertex>
 void Compute(hypergraph<vertex>&, commandLine);
