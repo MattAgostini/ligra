@@ -467,7 +467,7 @@ template<class vertex>
 void Compute(graph<vertex>&, commandLine, long start);
 
 template<class vertex>
-void Compute(hypergraph<vertex>&, commandLine);
+void Compute(hypergraph<vertex>&, commandLine, long start);
 
 int parallel_main(int argc, char* argv[]) {
   commandLine P(argc,argv," [-s] <inFile>");
@@ -490,10 +490,10 @@ int parallel_main(int argc, char* argv[]) {
       hypergraph<compressedSymmetricVertex> G =
         readCompressedHypergraph<compressedSymmetricVertex>(iFile,symmetric,mmap); //symmetric graph
 #endif
-      Compute(G,P);
+      Compute(G,P,0);
       for(int r=0;r<rounds;r++) {
         startTime();
-        Compute(G,P);
+        Compute(G,P,0);
         nextTime("Running time");
       }
       G.del();
@@ -505,7 +505,7 @@ int parallel_main(int argc, char* argv[]) {
       hypergraph<compressedAsymmetricVertex> G =
         readCompressedHypergraph<compressedAsymmetricVertex>(iFile,symmetric,mmap); //asymmetric graph
 #endif
-      Compute(G,P);
+      Compute(G,P,0);
       if(G.transposed) G.transpose();
       for(int r=0;r<rounds;r++) {
         startTime();
@@ -524,10 +524,10 @@ int parallel_main(int argc, char* argv[]) {
       hypergraph<symmetricVertex> G =
         readHypergraph<symmetricVertex>(iFile,compressed,symmetric,binary,mmap); //symmetric graph
 #endif
-      Compute(G,P);
+      Compute(G,P,0);
       for(int r=0;r<rounds;r++) {
         startTime();
-        Compute(G,P);
+        Compute(G,P,0);
         nextTime("Running time");
       }
       G.del();
@@ -550,7 +550,7 @@ int parallel_main(int argc, char* argv[]) {
 1105468,
 1543502};
 
-      Compute(G,P);
+      Compute(G,P,startVertices[0]);
       if(G.transposed) G.transpose();
       for(int r=0;r<rounds;r++) {
         //startTime();
