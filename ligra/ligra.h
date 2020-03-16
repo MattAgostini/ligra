@@ -542,7 +542,7 @@ int parallel_main(int argc, char* argv[]) {
 
       cout << "Starting" << endl;
       double sum = 0;
-      long* startVertices = {
+      long startVertices[] = {
 878248,
 1093773,
 1040066,
