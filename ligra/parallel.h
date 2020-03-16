@@ -24,6 +24,8 @@
 #ifndef _PARALLEL_H
 #define _PARALLEL_H
 
+#define CILKP true
+
 #if defined(CILK)
 #include <cilk/cilk.h>
 #define parallel_main main
