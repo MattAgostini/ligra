@@ -547,9 +547,9 @@ int parallel_main(int argc, char* argv[]) {
 
       //long startVertices[] = {165486, 15147, 288568, 17220, 127341, 328483}; // Higgs BFS
 
-      long startVertices[] = {3903641, 4158378, 1486101, 467386, 1875102, 1966836}; // LiveJournal BFS
+      //long startVertices[] = {3903641, 4158378, 1486101, 467386, 1875102, 1966836}; // LiveJournal BFS
 
-      //long startVertices[] = {858951, 438160, 1385063, 793905, 310461, 300989}; // Pokec BFS
+      long startVertices[] = {858951, 438160, 1385063, 793905, 310461, 300989}; // Pokec BFS
 
       //long startVertices[] = {5515818, 3554183, 2622510, 200094, 1323299, 1166567}; // StackOverflow BFS
 
