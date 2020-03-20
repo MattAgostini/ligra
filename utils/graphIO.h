@@ -837,13 +837,14 @@ namespace benchIO {
     }
     printf("k equals %d\n", k);
     parallel_for(long i=0;i<S.n-k;i++) S2[i] = S.A[k+i];
-
-    printf("k equals %d\n", k);
     S.del();
 
     printf("k equals %d\n", k);
 
     words W = stringToWords(S2, S.n-k);
+
+    printf("k equals %d\n", k);
+
     long n = W.m/2;
     printf("n equals %d\n", n);
     edge<intT> *E = newA(edge<intT>,n);
