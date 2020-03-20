@@ -555,7 +555,7 @@ namespace benchIO {
     setWorkers(1);
 
     parallel_for (long j=0; j < m; j++) {
-      printf("Doing things %ld %ld %ld\n", j, offsets[j],  offsets[j+1]);
+      printf("Doing things %ld %ld %ld %ld\n", sizeof(SA), j, offsets[j],  offsets[j+1]);
       SA[0] = 0; 
       printf("Doing things %ld %ld %ld\n", j, offsets[j],  offsets[j+1]);
       SA[j] = Str+offsets[j];
