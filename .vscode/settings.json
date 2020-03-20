@@ -6,6 +6,7 @@
         "BFS-Bitvector.C": "cpp",
         "BellmanFord.C": "cpp",
         "PageRank.C": "cpp",
-        "SNAPtoAdj.C": "cpp"
+        "SNAPtoAdj.C": "cpp",
+        "wghSNAPtoAdj.C": "cpp"
     }
 }
