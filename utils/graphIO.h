@@ -547,7 +547,7 @@ namespace benchIO {
     
     long *offsets = Off.A;
 
-    printf("Finished offsets %d %d\n", m, sizeof(m));
+    printf("Finished offsets %l %l\n", m, sizeof(m));
 
     // pointer to each start of word
     char **SA = newA(char*, m);
