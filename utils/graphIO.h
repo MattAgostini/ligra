@@ -835,6 +835,7 @@ namespace benchIO {
   template <class intT>
   edgeArray<intT> readSNAP(char* fname) {
     _seq<char> S = readStringFromFile(fname);
+    printf("read string from file %d\n", S.n);
     char* S2 = newA(char,S.n);
     //ignore starting lines with '#' and find where to start in file 
     long k=0;
