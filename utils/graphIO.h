@@ -835,6 +835,7 @@ namespace benchIO {
       //if(k >= S.n || S.A[k] != '#') break; 
       count++;
     }
+    printf("k equals %d\n", k);
     parallel_for(long i=0;i<S.n-k;i++) S2[i] = S.A[k+i];
     S.del();
 
