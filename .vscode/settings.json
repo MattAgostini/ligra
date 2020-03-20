@@ -5,6 +5,7 @@
         "ostream": "cpp",
         "BFS-Bitvector.C": "cpp",
         "BellmanFord.C": "cpp",
-        "PageRank.C": "cpp"
+        "PageRank.C": "cpp",
+        "SNAPtoAdj.C": "cpp"
     }
 }

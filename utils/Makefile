@@ -27,7 +27,8 @@ endif
 
 COMMON = utils.h parseCommandLine.h parallel.h quickSort.h blockRadixSort.h transpose.h
 LOCAL_COMMON = graphIO.h
-GENERATORS = rMatGraph gridGraph randLocalGraph SNAPtoAdj wghSNAPtoAdj adjGraphAddWeights adjToBinary communityToHyperAdj hyperAdjToBinary adjHypergraphAddWeights randHypergraph KONECTtoHyperAdj KONECTtoClique communityToClique communityToMESH KONECTtoMESH
+#GENERATORS = rMatGraph gridGraph randLocalGraph SNAPtoAdj wghSNAPtoAdj adjGraphAddWeights adjToBinary communityToHyperAdj hyperAdjToBinary adjHypergraphAddWeights randHypergraph KONECTtoHyperAdj KONECTtoClique communityToClique communityToMESH KONECTtoMESH
+GENERATORS = SNAPtoAdj wghSNAPtoAdj
 
 .PHONY: all clean
 all: $(GENERATORS)
