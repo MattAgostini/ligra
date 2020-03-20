@@ -37,5 +37,6 @@ int parallel_main(int argc, char* argv[]) {
   char* oFile = P.getArgument(0);
   bool sym = P.getOption("-s");
   edgeArray<uintT> G = readSNAP<uintT>(iFile);
+  cout << "Finished reading" << endl;
   writeGraphToFile<uintT>(graphFromEdges(G,sym),oFile);
 }
