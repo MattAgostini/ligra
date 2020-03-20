@@ -552,7 +552,7 @@ namespace benchIO {
     // pointer to each start of word
     //char **SA = newA(char*, m);
 
-    char **SA = malloc(m*sizeof(char));
+    char **SA = (char**) malloc(m*sizeof(char*));
 
     setWorkers(1);
 
