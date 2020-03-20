@@ -538,15 +538,21 @@ namespace benchIO {
     bool *FL = newA(bool,n);
     FL[0] = Str[0];
     parallel_for (long i=1; i < n; i++) FL[i] = Str[i] && !Str[i-1];
+
+    printf("Finished marking starts\n");
     
     // offset for each start of word
     _seq<long> Off = sequence::packIndex<long>(FL, n);
     long m = Off.n;
     long *offsets = Off.A;
 
+    printf("Finished offsets\n");
+
     // pointer to each start of word
     char **SA = newA(char*, m);
     parallel_for (long j=0; j < m; j++) SA[j] = Str+offsets[j];
+
+    printf("Finished pointers\n");
 
     free(offsets); free(FL);
     return words(Str,n,SA,m);
