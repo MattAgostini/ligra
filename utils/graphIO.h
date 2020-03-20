@@ -832,7 +832,6 @@ namespace benchIO {
     while(count < 2) {
       //if(S.A[k] == '#') {
 	    while(S.A[k++] != '\n') continue;
-      }
       //if(k >= S.n || S.A[k] != '#') break; 
       count++;
     }
