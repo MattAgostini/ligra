@@ -551,7 +551,6 @@ namespace benchIO {
     // pointer to each start of word
     char **SA = newA(char*, m);
     parallel_for (long j=0; j < m; j++) {
-      printf("Doing something %d\n", j);
       SA[j] = Str+offsets[j];
     }
 
