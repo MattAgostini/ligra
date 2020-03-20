@@ -830,10 +830,10 @@ namespace benchIO {
     long k=0;
     int count = 0;
     while(count < 2) {
-      if(S.A[k] == '#') {
-	while(S.A[k++] != '\n') continue;
+      //if(S.A[k] == '#') {
+	    while(S.A[k++] != '\n') continue;
       }
-      if(k >= S.n || S.A[k] != '#') break; 
+      //if(k >= S.n || S.A[k] != '#') break; 
       count++;
     }
     parallel_for(long i=0;i<S.n-k;i++) S2[i] = S.A[k+i];
