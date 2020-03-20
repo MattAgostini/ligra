@@ -828,11 +828,13 @@ namespace benchIO {
     char* S2 = newA(char,S.n);
     //ignore starting lines with '#' and find where to start in file 
     long k=0;
-    while(1) {
+    int count = 0;
+    while(count < 2) {
       if(S.A[k] == '#') {
 	while(S.A[k++] != '\n') continue;
       }
       if(k >= S.n || S.A[k] != '#') break; 
+      count++;
     }
     parallel_for(long i=0;i<S.n-k;i++) S2[i] = S.A[k+i];
     S.del();
