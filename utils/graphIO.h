@@ -827,7 +827,7 @@ namespace benchIO {
     _seq<char> S = readStringFromFile(fname);
     char* S2 = newA(char,S.n);
     //ignore starting lines with '#' and find where to start in file 
-    long k=0;
+    long k=2;
     int count = 0;
     while(count < 2) {
       //if(S.A[k] == '#') {
@@ -840,6 +840,7 @@ namespace benchIO {
 
     words W = stringToWords(S2, S.n-k);
     long n = W.m/2;
+    cout << n << endl;
     edge<intT> *E = newA(edge<intT>,n);
     {parallel_for(long i=0; i < n; i++)
       E[i] = edge<intT>(atol(W.Strings[2*i]), 
