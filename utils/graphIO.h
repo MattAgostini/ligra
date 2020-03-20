@@ -546,11 +546,14 @@ namespace benchIO {
     long m = Off.n;
     long *offsets = Off.A;
 
-    printf("Finished offsets\n");
+    printf("Finished offsets %d\n", m);
 
     // pointer to each start of word
     char **SA = newA(char*, m);
-    parallel_for (long j=0; j < m; j++) SA[j] = Str+offsets[j];
+    parallel_for (long j=0; j < m; j++) {
+      printf("Doing something %d\n", j);
+      SA[j] = Str+offsets[j];
+    }
 
     printf("Finished pointers\n");
 
