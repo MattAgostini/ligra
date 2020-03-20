@@ -538,32 +538,15 @@ namespace benchIO {
     bool *FL = newA(bool,n);
     FL[0] = Str[0];
     parallel_for (long i=1; i < n; i++) FL[i] = Str[i] && !Str[i-1];
-
-    printf("Finished marking starts\n");
     
     // offset for each start of word
     _seq<long> Off = sequence::packIndex<long>(FL, n);
     long m = Off.n;
-    
     long *offsets = Off.A;
 
-    printf("Finished offsets %ld %d\n", m, sizeof(m));
-
     // pointer to each start of word
-    //char **SA = newA(char*, m);
-
-    char **SA = (char**) malloc(m*sizeof(char*));
-
-    setWorkers(1);
-
-    parallel_for (long j=0; j < m; j++) {
-      printf("Doing things %p %ld %ld %ld\n", SA, j, offsets[j],  offsets[j+1]);
-      SA[0] = 0; 
-      printf("Doing things %ld %ld %ld\n", j, offsets[j],  offsets[j+1]);
-      SA[j] = Str+offsets[j];
-    }
-
-    printf("Finished pointers\n");
+    char **SA = newA(char*, m);
+    parallel_for (long j=0; j < m; j++) SA[j] = Str+offsets[j];
 
     free(offsets); free(FL);
     return words(Str,n,SA,m);
@@ -842,7 +825,6 @@ namespace benchIO {
   template <class intT>
   edgeArray<intT> readSNAP(char* fname) {
     _seq<char> S = readStringFromFile(fname);
-    printf("read string from file %ld\n", S.n);
     char* S2 = newA(char,S.n);
     //ignore starting lines with '#' and find where to start in file 
     long k=0;
@@ -853,18 +835,11 @@ namespace benchIO {
       //if(k >= S.n || S.A[k] != '#') break; 
       count++;
     }
-    printf("k equals %d\n", k);
     parallel_for(long i=0;i<S.n-k;i++) S2[i] = S.A[k+i];
     S.del();
 
-    printf("k equals %d\n", k);
-
     words W = stringToWords(S2, S.n-k);
-
-    printf("k equals %d\n", k);
-
     long n = W.m/2;
-    printf("n equals %d\n", n);
     edge<intT> *E = newA(edge<intT>,n);
     {parallel_for(long i=0; i < n; i++)
       E[i] = edge<intT>(atol(W.Strings[2*i]), 
